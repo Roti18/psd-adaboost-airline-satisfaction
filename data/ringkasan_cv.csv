@@ -1,0 +1,6 @@
+,Rata-rata,Std
+Akurasi Latih,0.921101,0.000914
+Akurasi Validasi,0.921069,0.00143
+Presisi,0.918218,0.002538
+Recall,0.897789,0.002957
+F1,0.907887,0.002349
