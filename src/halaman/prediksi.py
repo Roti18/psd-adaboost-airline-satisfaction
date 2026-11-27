@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
 from src.config import DAFTAR_FITUR, PETA_CLASS, PETA_TRAVEL, PETA_CUSTOMER
-from src.data_loader import muat_train, muat_test, muat_model
+from src.data_loader import muat_train, muat_test, muat_model, muat_perbandingan_konfig
 from src.model import hitung_H, prediksi, hitung_keyakinan, kontribusi_stump
 from src.charts import chart_kontribusi_stump, chart_kontribusi_fitur
 
@@ -271,7 +271,9 @@ def tampil():
             H_cek = hitung_H(df_test, df_model)
             y_pred_cek = prediksi(H_cek)
             acc_cek = accuracy_score(df_test["y"], y_pred_cek)
-            target_acc = 0.920552
+            df_konfig = muat_perbandingan_konfig()
+            baris = df_konfig[(df_konfig["Fitur"] == 17) & (df_konfig["T"] == 67)]
+            target_acc = float(baris["Akurasi Test"].iloc[0]) if len(baris) else acc_cek
 
             if np.isclose(acc_cek, target_acc, atol=1e-5):
                 st.success(

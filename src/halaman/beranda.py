@@ -61,7 +61,7 @@ def tampil():
     with col_p3:
         st.markdown(
             "**3. Validasi Silang (Cross-Validation)**\n"
-            "- Pembuatan 4 fold stratified pada 83.123 data latih.\n"
+            "- Pembuatan 4 fold (nomor urut bergilir, proporsi kelas tiap fold seimbang) pada 83.123 data latih.\n"
             "- Setiap fold berisi ~20.781 data validasi.\n"
             "- Evaluasi kestabilan metrik akurasi, presisi, recall, dan F1."
         )

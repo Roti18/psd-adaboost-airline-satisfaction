@@ -237,7 +237,7 @@ def tampil():
                 f"**Kesimpulan Kinerja:** Selisih akurasi antara data latih (**{acc_tr*100:.2f}%**), "
                 f"validasi silang CV (**{acc_val*100:.2f}%**), dan data uji (**{acc_ts*100:.2f}%**) "
                 f"sangat kecil (selisih Latih-Uji hanya **{selisih_train_test:.2f}%** dan CV-Uji hanya **{selisih_cv_test:.2f}%**). "
-                f"Hal ini membuktikan secara ilmiah bahwa model AdaBoost dengan 17 fitur dan T=67 memiliki kemampuan generalisasi "
-                f"yang luar biasa tangguh dan **sama sekali tidak mengalami overfitting**.",
+                f"Hal ini menunjukkan model AdaBoost dengan 17 fitur dan T=67 memiliki generalisasi yang baik "
+                f"dan **tidak ada indikasi overfitting**.",
                 icon=":material/check_circle:"
             )

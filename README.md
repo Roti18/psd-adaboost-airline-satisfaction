@@ -38,9 +38,9 @@ web/
 - Total Data: 103.904 baris data penumpang penerbangan.
 - Pembagian Data: 80% data latih (83.123 baris) dan 20% data uji (20.781 baris) dengan stratified split.
 - Target Klasifikasi: Biner, yaitu Puas (+1) dan Netral atau Tidak Puas (-1).
-- Penanganan Missing Value: 310 nilai kosong pada kolom Arrival_Delay_in_Minutes diimputasi menggunakan nilai median data latih.
+- Penanganan Missing Value: 310 nilai kosong pada kolom Arrival_Delay_in_Minutes diimputasi menggunakan nilai median data latih (kolom ini akhirnya tidak terpilih sebagai fitur model karena korelasinya rendah).
 - Seleksi Fitur: Dari 22 fitur asli, dipilih 17 fitur dengan nilai mutlak korelasi Pearson (|r|) tertinggi terhadap variabel target pada data latih. 5 fitur dengan korelasi terendah dieliminasi.
-- Validasi Silang: Stratified 4-Fold Cross Validation diterapkan pada 83.123 data latih.
+- Validasi Silang: 4-Fold Cross Validation (fold bergilir berdasarkan urutan data, proporsi kelas tiap fold seimbang) diterapkan pada 83.123 data latih.
 
 ## 17 Fitur Terpilih
 
@@ -87,7 +87,7 @@ web/
 - Recall Data Uji (Kelas Puas): 90.21%
 - F1-Score Data Uji: 0.9078
 - ROC-AUC Data Uji: 0.9734
-- Kestabilan Model: Selisih antara akurasi latih dan uji hanya 0.10%, serta selisih validasi silang dan uji hanya 0.05%. Kinerja yang konsisten pada data latih, validasi, dan data uji membuktikan bahwa model tidak mengalami overfitting.
+- Kestabilan Model: Selisih antara akurasi latih dan uji hanya 0.10%, serta selisih validasi silang dan uji hanya 0.05%. Kinerja yang konsisten pada data latih, validasi, dan data uji menunjukkan tidak ada indikasi overfitting.
 
 ## Struktur Modul Kode
 
